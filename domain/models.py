@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
@@ -20,14 +21,14 @@ class PaymentMethod(models.Model):
 
 
 class Continent(models.Model):
-    name = models.TextField(max_length=20)
+    name = models.CharField(max_length=20)
 
     class Meta:
         db_table = 'continents'
 
 
 class Country(models.Model):
-    name = models.TextField(max_length=50)
+    name = models.CharField(max_length=50)
     continent = models.ForeignKey(Continent, on_delete=models.PROTECT)
 
     class Meta:
@@ -35,7 +36,7 @@ class Country(models.Model):
 
 
 class Destination(models.Model):
-    name = models.TextField(max_length=20)
+    name = models.CharField(max_length=50)
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
 
     class Meta:
@@ -43,8 +44,8 @@ class Destination(models.Model):
 
 
 class Hotel(models.Model):
-    name = models.TextField(max_length=30)
-    address = models.TextField(max_length=30)
+    name = models.CharField(max_length=30)
+    address = models.CharField(max_length=50)
     stars_number = models.IntegerField()
 
     destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
@@ -53,7 +54,7 @@ class Hotel(models.Model):
         db_table = 'hotels'
 
 
-class Fly(models.Model):
+class Flight(models.Model):
     fly_date = models.DateTimeField()
     total_seats = models.IntegerField()
     tourist_class_seats = models.IntegerField()
@@ -62,19 +63,20 @@ class Fly(models.Model):
     destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
 
     class Meta:
-        db_table = 'flies'
+        db_table = 'flights'
 
 
 class Plan(models.Model):
+    name = models.CharField(max_length=30)
     trip_days = models.IntegerField()
-    remaining_seats = models.IntegerField()
+    remaining_seats = models.IntegerField(null=True)
     description = models.TextField(max_length=200)
     price = models.FloatField()
 
     hotel = models.ForeignKey(Hotel, on_delete=models.PROTECT)
     destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
-    departure_fly = models.OneToOneField(Fly, on_delete=models.CASCADE, related_name='departure_fly')
-    return_fly = models.OneToOneField(Fly, on_delete=models.SET_NULL, null=True, related_name='return_fly')
+    departure_flight = models.OneToOneField(Flight, on_delete=models.CASCADE, related_name='plan_departure')
+    return_flight = models.OneToOneField(Flight, on_delete=models.SET_NULL, null=True, related_name='plan_return')
 
     class Meta:
         db_table = 'plans'
@@ -86,19 +88,21 @@ class Booking(models.Model):
     total_cost = models.FloatField()
 
     payment_method = models.ForeignKey(PaymentMethod, on_delete=models.PROTECT)
-    client = models.ForeignKey(Client, on_delete=models.PROTECT)
-    plan = models.ForeignKey(Plan, on_delete=models.PROTECT)
+    client = models.ForeignKey(Client, on_delete=models.PROTECT, related_name='bookings')
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name='bookings')
 
     class Meta:
         db_table = 'bookings'
 
 
 class Review(models.Model):
-    rating = models.FloatField()
-    comment = models.TextField(max_length=500, null=True)
+    rating = models.FloatField(
+        validators=[MinValueValidator(0.0), MaxValueValidator(5.0)]
+    )
+    comment = models.TextField(max_length=500, null=True, blank=True)
 
-    plan = models.ForeignKey(Plan, on_delete=models.PROTECT)
-    client = models.ForeignKey(Client, on_delete=models.PROTECT)
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name='reviews')
+    client = models.ForeignKey(Client, on_delete=models.PROTECT, related_name='reviews')
 
     class Meta:
         db_table = 'reviews'
