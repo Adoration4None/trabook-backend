@@ -19,16 +19,50 @@ class PaymentMethod(models.Model):
         db_table = 'payment_methods'
 
 
-class Hotel(models.Model):
+class Continent(models.Model):
+    name = models.TextField(max_length=20)
 
+    class Meta:
+        db_table = 'continents'
+
+
+class Country(models.Model):
+    name = models.TextField(max_length=50)
+    continent = models.ForeignKey(Continent, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'countries'
 
 
 class Destination(models.Model):
+    name = models.TextField(max_length=20)
+    country = models.ForeignKey(Country, on_delete=models.PROTECT)
 
+    class Meta:
+        db_table = 'destinations'
+
+
+class Hotel(models.Model):
+    name = models.TextField(max_length=30)
+    address = models.TextField(max_length=30)
+    stars_number = models.IntegerField()
+
+    destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'hotels'
 
 
 class Fly(models.Model):
+    fly_date = models.DateTimeField()
+    total_seats = models.IntegerField()
+    tourist_class_seats = models.IntegerField()
+    first_class_seats = models.IntegerField()
 
+    destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'flies'
 
 
 class Plan(models.Model):
@@ -39,8 +73,8 @@ class Plan(models.Model):
 
     hotel = models.ForeignKey(Hotel, on_delete=models.PROTECT)
     destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
-    departure_fly = models.OneToOneField(Fly, on_delete=models.CASCADE)
-    return_fly = models.OneToOneField(Fly, on_delete=models.SET_NULL, null=True)
+    departure_fly = models.OneToOneField(Fly, on_delete=models.CASCADE, related_name='departure_fly')
+    return_fly = models.OneToOneField(Fly, on_delete=models.SET_NULL, null=True, related_name='return_fly')
 
     class Meta:
         db_table = 'plans'
@@ -59,4 +93,12 @@ class Booking(models.Model):
         db_table = 'bookings'
 
 
+class Review(models.Model):
+    rating = models.FloatField()
+    comment = models.TextField(max_length=500, null=True)
 
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT)
+    client = models.ForeignKey(Client, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'reviews'

@@ -43,7 +43,8 @@ BASE_APPS = [
 ]
 
 LOCAL_APPS = [
-
+    'api',
+    'domain'
 ]
 
 THIRD_APPS = [

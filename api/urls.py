@@ -1,7 +1,8 @@
 # Routes for the API
 
 from django.urls import path
+from api.views import welcome_page
 
 urlpatterns = [
-    path('/')
+    path('', welcome_page, name='welcome_page')
 ]
