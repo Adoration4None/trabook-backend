@@ -14,7 +14,13 @@ def welcome_page(request):
 class ClientView(View):
     def get(self, request):
         clients = client_service.list_all()
-        response = {'status': 'OK', 'clients': clients}
+        response = {'status': 'OK',
+                    'clients': clients,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+                    'Access-Control-Max-Age': '1000',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+                    }
 
         return JsonResponse(response)
 
@@ -31,7 +37,13 @@ class ClientView(View):
 class DestinationView(View):
     def get(self, request):
         destinations = destination_service.list_all()
-        response = {'status': 'OK', 'destinations': destinations}
+        response = {'status': 'OK',
+                    'destinations': destinations,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+                    'Access-Control-Max-Age': '1000',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+                    }
 
         return JsonResponse(response)
 
@@ -48,7 +60,13 @@ class DestinationView(View):
 class PlanView(View):
     def get(self, request):
         plans = plan_service.list_all()
-        response = {'status': 'OK', 'plans': plans}
+        response = {'status': 'OK',
+                    'plans': plans,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+                    'Access-Control-Max-Age': '1000',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+                    }
 
         return JsonResponse(response)
 
@@ -65,7 +83,13 @@ class PlanView(View):
 class ReviewView(View):
     def get(self, request):
         reviews = review_service.list_all()
-        response = {'status': 'OK', 'reviews': reviews}
+        response = {'status': 'OK',
+                    'reviews': reviews,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+                    'Access-Control-Max-Age': '1000',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+                    }
 
         return JsonResponse(response)
 
@@ -82,7 +106,13 @@ class ReviewView(View):
 class CountryView(View):
     def get(self, request):
         countries = country_service.list_all()
-        response = {'status': 'OK', 'countries': countries}
+        response = {'status': 'OK',
+                    'countries': countries,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+                    'Access-Control-Max-Age': '1000',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+                    }
 
         return JsonResponse(response)
 
