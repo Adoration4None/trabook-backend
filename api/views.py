@@ -1,11 +1,7 @@
 from django.http import JsonResponse
-from django.views import View
 from rest_framework import viewsets
 from .serializer import *
-
 from domain.models import *
-from domain.services import (client_service, destination_service, plan_service,
-                             review_service, country_service)
 
 # Create your views here.
 
@@ -20,57 +16,49 @@ class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
 
 
-class DestinationViewSet(viewsets.ModelViewSet):
-    queryset = Destination.objects.all()
-    serializer_class = DestinationSerializer
+class PaymentMethodViewSet(viewsets.ModelViewSet):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
 
-class PlanView(View):
-    def get(self, request):
-        plans = plan_service.list_all()
-        response = {'status': 'OK',
-                    'plans': plans,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Max-Age': '1000',
-                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
-                    }
-
-        return JsonResponse(response)
-
-    def post(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
-    def delete(self, request):
-        pass
-
-
-class ReviewView(View):
-    def get(self, request):
-        reviews = review_service.list_all()
-        response = {'status': 'OK',
-                    'reviews': reviews,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Max-Age': '1000',
-                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
-                    }
-
-        return JsonResponse(response)
-
-    def post(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
-    def delete(self, request):
-        pass
+class ContinentViewSet(viewsets.ModelViewSet):
+    queryset = Continent.objects.all()
+    serializer_class = ContinentSerializer
 
 
 class CountryViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
+
+
+class DestinationViewSet(viewsets.ModelViewSet):
+    queryset = Destination.objects.all()
+    serializer_class = DestinationSerializer
+
+
+class HotelViewSet(viewsets.ModelViewSet):
+    queryset = Hotel.objects.all()
+    serializer_class = HotelSerializer
+
+
+class FlightViewSet(viewsets.ModelViewSet):
+    queryset = Flight.objects.all()
+    serializer_class = FlightSerializer
+
+
+class PlanViewSet(viewsets.ModelViewSet):
+    queryset = Plan.objects.all()
+    serializer_class = PlanSerializer
+
+
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+
+class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+
+
+
