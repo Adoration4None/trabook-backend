@@ -25,3 +25,5 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080'
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True

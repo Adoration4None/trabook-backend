@@ -1,5 +1,9 @@
 from django.http import JsonResponse
 from django.views import View
+from rest_framework import viewsets
+from .serializer import *
+
+from domain.models import *
 from domain.services import (client_service, destination_service, plan_service,
                              review_service, country_service)
 
@@ -11,50 +15,14 @@ def welcome_page(request):
     return JsonResponse(response)
 
 
-class ClientView(View):
-    def get(self, request):
-        clients = client_service.list_all()
-        response = {'status': 'OK',
-                    'clients': clients,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Max-Age': '1000',
-                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
-                    }
-
-        return JsonResponse(response)
-
-    def post(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
-    def delete(self, request):
-        pass
+class ClientViewSet(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
 
 
-class DestinationView(View):
-    def get(self, request):
-        destinations = destination_service.list_all()
-        response = {'status': 'OK',
-                    'destinations': destinations,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Max-Age': '1000',
-                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
-                    }
-
-        return JsonResponse(response)
-
-    def post(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
-    def delete(self, request):
-        pass
+class DestinationViewSet(viewsets.ModelViewSet):
+    queryset = Destination.objects.all()
+    serializer_class = DestinationSerializer
 
 
 class PlanView(View):
@@ -103,24 +71,6 @@ class ReviewView(View):
         pass
 
 
-class CountryView(View):
-    def get(self, request):
-        countries = country_service.list_all()
-        response = {'status': 'OK',
-                    'countries': countries,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Max-Age': '1000',
-                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
-                    }
-
-        return JsonResponse(response)
-
-    def post(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
-    def delete(self, request):
-        pass
+class CountryViewSet(viewsets.ModelViewSet):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
