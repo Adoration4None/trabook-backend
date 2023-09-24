@@ -66,31 +66,31 @@ VALUES
   ('United States', 5); -- North America
 
 
-INSERT INTO destinations (name, country_id)
+INSERT INTO destinations (name, image, country_id)
 VALUES
-  ('Victoria Falls', 17),            -- Victoria Falls, South Africa
-  ('Kruger National Park', 17),      -- Kruger National Park, South Africa
-  ('Cape Town', 17),                 -- Cape Town, South Africa
-  ('Machu Picchu', 15),              -- Machu Picchu, Peru
-  ('Amazon Rainforest', 15),         -- Amazon Rainforest, Peru
-  ('Lake Titicaca', 15),             -- Lake Titicaca, Peru
-  ('Grand Canyon', 20),              -- Grand Canyon, United States
-  ('New York City', 20),             -- New York City, United States
-  ('Yellowstone National Park', 20), -- Yellowstone National Park, United States
-  ('Niagara Falls', 20),             -- Niagara Falls, United States
-  ('Los Angeles', 20),               -- Los Angeles, United States
-  ('Tokyo', 11),                     -- Tokyo, Japan
-  ('Kyoto', 11),                     -- Kyoto, Japan
-  ('Osaka', 11),                     -- Osaka, Japan
-  ('Great Wall of China', 4),        -- Great Wall of China, China
-  ('Beijing', 4),                    -- Beijing, China
-  ('Shanghai', 4),                   -- Shanghai, China
-  ('Rome', 10),                      -- Rome, Italy
-  ('Venice', 10),                    -- Venice, Italy
-  ('Firenze', 10),                   -- Firenze, Italy
-  ('Paris', 1),                      -- Paris, France
-  ('London', 19),                    -- London, UK
-  ('Madrid', 18);                    -- Madrid, Spain
+  ('Victoria Falls', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413052/destinations-img/ezmu0w9zddlpehllpqqt.jpg', 17),            -- Victoria Falls, South Africa
+  ('Kruger National Park', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413052/destinations-img/zwlkjmnbgevp12vq76bw.jpg', 17),      -- Kruger National Park, South Africa
+  ('Cape Town', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413051/destinations-img/wow9nrkjpo666akgihpd.jpg', 17),                 -- Cape Town, South Africa
+  ('Machu Picchu', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413051/destinations-img/lfgqyhwzwr3pzqf1cezh.jpg', 15),              -- Machu Picchu, Peru
+  ('Amazon Rainforest', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413053/destinations-img/pxfj6onskadmqia8jtty.jpg', 15),         -- Amazon Rainforest, Peru
+  ('Lake Titicaca', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413053/destinations-img/comvvhajo9gtkqljzaat.jpg', 15),             -- Lake Titicaca, Peru
+  ('Grand Canyon', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413051/destinations-img/p3mtuxe7xpsiyjlahu0y.jpg', 20),              -- Grand Canyon, United States
+  ('New York City', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413050/destinations-img/rq7xzswpeetbyzi7v4nv.jpg',20),              -- New York City, United States
+  ('Yellowstone National Park', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413050/destinations-img/yg2tjromfrvr6muv5mug.jpg', 20), -- Yellowstone National Park, United States
+  ('Niagara Falls', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413049/destinations-img/i463i5n2pwgdfsv2sjyz.jpg', 20),             -- Niagara Falls, United States
+  ('Los Angeles', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413049/destinations-img/cyqetdslrxghzmsiczdw.jpg', 20),               -- Los Angeles, United States
+  ('Tokyo', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/kenprivkkxztlgflmwce.jpg', 11),                     -- Tokyo, Japan
+  ('Kyoto', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/xraznwouujcaoiihvq53.jpg', 11),                     -- Kyoto, Japan
+  ('Osaka', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413049/destinations-img/mbewwzgnkso1ue56itr0.jpg', 11),                     -- Osaka, Japan
+  ('Great Wall of China', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/ss24nsszp2wpojjoe501.jpg', 4),        -- Great Wall of China, China
+  ('Beijing', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/x9gdj9sewd8v1odbzatm.jpg', 4),                    -- Beijing, China
+  ('Shanghai', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/ubmsdkce7ahppg9xnls9.jpg', 4),                   -- Shanghai, China
+  ('Rome', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413048/destinations-img/rniw26uet1jysuk1jywy.jpg', 10),                      -- Rome, Italy
+  ('Venice', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413047/destinations-img/wsjnoy80xsqoqw5ioesd.jpg', 10),                    -- Venice, Italy
+  ('Firenze', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413047/destinations-img/yigjlfbnpxqrftwl3aov.jpg', 10),                   -- Firenze, Italy
+  ('Paris', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413047/destinations-img/xsoanykqyefmdokpdpln.jpg', 1),                      -- Paris, France
+  ('London', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413047/destinations-img/gkplyvjhsg7ykkpuovbv.jpg', 19),                    -- London, UK
+  ('Madrid', 'https://res.cloudinary.com/di7fysrpl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1695413046/destinations-img/kmbykofyfju8iuomq3rn.jpg', 18);                    -- Madrid, Spain
 
 
 INSERT INTO hotels (name, address, stars_number, destination_id)
@@ -133,19 +133,19 @@ VALUES
   ('2023-10-17 05:30:00', 220, 150, 70, 23); -- Vuelo a Madrid, España
 
 
-INSERT INTO plans (name, trip_days, remaining_seats, description, price, hotel_id, destination_id, departure_flight_id, return_flight_id)
+INSERT INTO plans (name, trip_days, remaining_seats, description, price, previous_price, hotel_id, destination_id, departure_flight_id, return_flight_id)
 VALUES
-  ('Cape Town Adventure',       7, 100, 'Embark on a thrilling adventure in the stunning landscapes of Cape Town, South Africa.',     1600.00, 3,  3,  1,  NULL), -- Viaje a Ciudad del Cabo
-  ('Inca Trail Expedition',     5, 80,  'Embark on a journey along the historic Inca Trail leading to the magnificent Machu Picchu.', 1200.00, 4,  4,  2,  NULL), -- Viaje a Machu Picchu, Perú
-  ('Big Apple Getaway',         4, 70,  'Explore the iconic landmarks and vibrant culture of New York City.',                         1800.00, 8,  8,  3,  NULL), -- Viaje a Nueva York, Estados Unidos
-  ('Tokyo Discovery',           6, 90,  'Immerse yourself in the bustling metropolis of Tokyo, Japan.',                               1600.00, 12, 12, 4,  NULL), -- Viaje a Tokio, Japón
-  ('Shanghai Spectacular',      5, 80,  'Experience the blend of traditional and modern in the vibrant city of Shanghai.',            1400.00, 14, 17, 5,  NULL), -- Viaje a Shanghái, China
-  ('Roman Holiday',             7, 100, 'Step back in time and explore the ancient history of Rome, Italy.',                          1700.00, 16, 18, 6,  NULL), -- Viaje a Roma, Italia
-  ('Venetian Escape',           5, 80,  'Navigate the charming canals and alleyways of Venice, Italy.',                               1500.00, 17, 19, 7,  NULL), -- Viaje a Venecia, Italia
-  ('Art & Culture in Firenze',  6, 90,  'Discover the Renaissance treasures in the heart of Florence, Italy.',                        1600.00, 18, 20, 8,  NULL), -- Viaje a Florencia, Italia
-  ('Parisian Romance',          7, 100, 'Experience the enchanting atmosphere of Paris, France.',                                     1900.00, 19, 21, 9,  NULL), -- Viaje a París, Francia
-  ('London Explorer',           8, 110, 'Uncover the rich history and diverse culture of London, UK.',                                2000.00, 20, 22, 10, NULL), -- Viaje a Londres, Reino Unido
-  ('Madrid Getaway',            6, 90,  'Enjoy the vibrant energy and warm hospitality of Madrid, Spain.',                            1700.00, 21, 23, 11, NULL); -- Viaje a Madrid, España
+  ('Cape Town Adventure',       7, 100, 'Embark on a thrilling adventure in the stunning landscapes of Cape Town, South Africa.',     1000.00, 1600.00, 3,  3,  1,  NULL), -- Viaje a Ciudad del Cabo
+  ('Inca Trail Expedition',     5, 80,  'Embark on a journey along the historic Inca Trail leading to the magnificent Machu Picchu.', 980.00,  1200.00, 4,  4,  2,  NULL), -- Viaje a Machu Picchu, Perú
+  ('Big Apple Getaway',         4, 70,  'Explore the iconic landmarks and vibrant culture of New York City.',                         1500.00, 1800.00, 8,  8,  3,  NULL), -- Viaje a Nueva York, Estados Unidos
+  ('Tokyo Discovery',           6, 90,  'Immerse yourself in the bustling metropolis of Tokyo, Japan.',                               1100.00, 1600.00, 12, 12, 4,  NULL), -- Viaje a Tokio, Japón
+  ('Shanghai Spectacular',      5, 80,  'Experience the blend of traditional and modern in the vibrant city of Shanghai.',            990.00,  1400.00, 14, 17, 5,  NULL), -- Viaje a Shanghái, China
+  ('Roman Holiday',             7, 100, 'Step back in time and explore the ancient history of Rome, Italy.',                          1200.00, 1700.00, 16, 18, 6,  NULL), -- Viaje a Roma, Italia
+  ('Venetian Escape',           5, 80,  'Navigate the charming canals and alleyways of Venice, Italy.',                               1120.00, 1500.00, 17, 19, 7,  NULL), -- Viaje a Venecia, Italia
+  ('Art & Culture in Firenze',  6, 90,  'Discover the Renaissance treasures in the heart of Florence, Italy.',                        980.00,  1600.00, 18, 20, 8,  NULL), -- Viaje a Florencia, Italia
+  ('Parisian Romance',          7, 100, 'Experience the enchanting atmosphere of Paris, France.',                                     1500.00, 1900.00, 19, 21, 9,  NULL), -- Viaje a París, Francia
+  ('London Explorer',           8, 110, 'Uncover the rich history and diverse culture of London, UK.',                                1600.00, 2000.00, 20, 22, 10, NULL), -- Viaje a Londres, Reino Unido
+  ('Madrid Getaway',            6, 90,  'Enjoy the vibrant energy and warm hospitality of Madrid, Spain.',                            1200.00, 1700.00, 21, 23, 11, NULL); -- Viaje a Madrid, España
 
 
 INSERT INTO bookings (booking_date, seats_booked, total_cost, payment_method_id, client_id, plan_id)

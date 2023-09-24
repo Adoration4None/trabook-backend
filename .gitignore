@@ -17,3 +17,4 @@ env/
 .pytest_cache/
 log/
 cache/
+trabook/settings/settings.ini

@@ -33,5 +33,5 @@ For detailed information on each endpoint, refer to the [API documentation](./Op
 
 ## Relational Model
 The database was designed as described in the following diagram.
-<img src="https://lh3.googleusercontent.com/drive-viewer/AITFw-ztBWCWtS-xt-KSVcrloQyltc6u7USuSQbHzpCSm_fTHB2N3q_bJmdb_Z9BI_mrD7dem1X1E58G4V8f30aChKHG6Nbj2g=w1366-h607" />
+<img src="https://drive.google.com/file/d/15pKC_S9_G8posoP9yOnIKhCyH8HtOFru/view?usp=drive_link" />
 

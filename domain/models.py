@@ -37,6 +37,8 @@ class Country(models.Model):
 
 class Destination(models.Model):
     name = models.CharField(max_length=50)
+    image = models.FileField(upload_to='destinations-img', null=True, max_length=300)
+
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
 
     class Meta:
@@ -72,6 +74,7 @@ class Plan(models.Model):
     remaining_seats = models.IntegerField(null=True)
     description = models.TextField(max_length=200)
     price = models.FloatField()
+    previous_price = models.FloatField(null=True)
 
     hotel = models.ForeignKey(Hotel, on_delete=models.PROTECT)
     destination = models.ForeignKey(Destination, on_delete=models.PROTECT)
